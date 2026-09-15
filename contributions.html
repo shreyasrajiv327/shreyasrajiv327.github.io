@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contributions · Shreyas Rajiv</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg2: #f5f5f7;
+      --text: #1d1d1f;
+      --text2: #6e6e73;
+      --text3: #99999f;
+      --border: rgba(0,0,0,0.08);
+      --sans: 'Geist', -apple-system, 'Helvetica Neue', sans-serif;
+      --mono: 'Geist Mono', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg2: #111111;
+        --text: #f5f5f7;
+        --text2: #a1a1a6;
+        --text3: #77777c;
+        --border: rgba(255,255,255,0.08);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+
+      height: 48px;
+
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+
+      border-bottom: 0.5px solid var(--border);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 22px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      nav {
+        background: rgba(0,0,0,0.8);
+      }
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-back {
+      font-size: 13px;
+      color: var(--text2);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 140px 22px 100px;
+    }
+
+    .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 14px;
+    }
+
+    .headline {
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      max-width: 620px;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text2);
+      margin-bottom: 80px;
+    }
+
+    .contributions {
+      border-top: 0.5px solid var(--border);
+    }
+
+    .contribution {
+      padding: 48px 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .contribution-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .contribution-org {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .contribution-title {
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+    }
+
+    .contribution-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+      white-space: nowrap;
+    }
+
+    .contribution-desc {
+      max-width: 720px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text2);
+      margin-bottom: 24px;
+    }
+
+    .contribution-link {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .contribution-link:hover {
+      opacity: 0.6;
+    }
+
+    .status {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 5px 10px;
+      border: 0.5px solid var(--border);
+      border-radius: 980px;
+      margin-bottom: 14px;
+    }
+
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 30px 22px;
+    }
+
+    footer div {
+      max-width: 980px;
+      margin: auto;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+    }
+
+    @media (max-width: 680px) {
+      .contribution-header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .contribution-meta {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Shreyas Rajiv</a>
+  <a href="index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page">
+
+  <p class="label">Open Source</p>
+
+  <h1 class="headline">Contributions.</h1>
+
+  <p class="intro">
+    Selected contributions to open source infrastructure projects,
+    focused on networking, observability, security, and distributed systems.
+  </p>
+
+  <div class="contributions">
+
+    <!-- CILIUM HUBBLE -->
+
+    <article class="contribution">
+
+      <div class="contribution-header">
+
+        <div>
+          <div class="contribution-org">
+            Cilium · Hubble
+          </div>
+
+          <h2 class="contribution-title">
+            Fix L7 monitor filtering for AccessLog events
+          </h2>
+        </div>
+
+        <div class="contribution-meta">
+          PR #46519 · Merged
+        </div>
+
+      </div>
+
+      <p class="contribution-desc">
+        Fixed an issue in Hubble's monitor filtering where AccessLog
+        events were not handled correctly by the existing filtering
+        logic. The change extended event handling to correctly account
+        for AccessLog message types and included corresponding tests
+        to verify the behavior.
+      </p>
+
+      <a
+        href="https://github.com/cilium/cilium/pull/46519"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contribution-link"
+      >
+        View pull request ↗
+      </a>
+
+    </article>
+
+
+    <!-- CILIUM GATEWAY -->
+
+    <article class="contribution">
+
+      <div class="contribution-header">
+
+        <div>
+          <div class="contribution-org">
+            Cilium · Gateway API
+          </div>
+
+          <h2 class="contribution-title">
+            Fail closed on invalid ExternalAuth
+          </h2>
+        </div>
+
+        <div class="contribution-meta">
+          PR #47929 · Merged
+        </div>
+
+      </div>
+
+      <p class="contribution-desc">
+        Fixed a Gateway API security issue where an ExternalAuth
+        configuration referencing a resource across namespaces could
+        be accepted without the required ReferenceGrant. The fix
+        validates the reference and ensures the request fails closed
+        with a 500 response when the authorization configuration is
+        invalid.
+      </p>
+
+      <a
+        href="https://github.com/cilium/cilium/pull/47929"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contribution-link"
+      >
+        View pull request ↗
+      </a>
+
+    </article>
+
+
+    <!-- CONSUL -->
+
+    <article class="contribution">
+
+      <div class="contribution-header">
+
+        <div>
+          <div class="contribution-org">
+            HashiCorp · Consul
+          </div>
+
+          <h2 class="contribution-title">
+            Support for post-quantum algorithms
+          </h2>
+        </div>
+
+        <div class="contribution-meta">
+          Issue #23738 · Open
+        </div>
+
+      </div>
+
+      <p class="contribution-desc">
+        Proposed support for post-quantum cryptographic algorithms
+        in Consul, exploring the requirements and implications of
+        integrating post-quantum security into service-to-service
+        communication.
+      </p>
+
+      <a
+        href="https://github.com/hashicorp/consul/issues/23738"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contribution-link"
+      >
+        View issue ↗
+      </a>
+
+    </article>
+
+  </div>
+
+</main>
+
+<footer>
+  <div>
+    © 2026 Shreyas Rajiv
+  </div>
+</footer>
+
+</body>
+</html>
