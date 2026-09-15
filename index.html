@@ -285,6 +285,112 @@
       margin-top: 10px; letter-spacing: 0.04em;
     }
 
+    /* CONTRIBUTIONS */
+.contributions {
+  margin-top: 40px;
+  border-top: 0.5px solid var(--border);
+}
+
+.contrib-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 0;
+  border-bottom: 0.5px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.contrib-row:hover {
+  opacity: 0.65;
+}
+
+.contrib-main {
+  min-width: 0;
+}
+
+.contrib-repo {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+  margin-bottom: 7px;
+}
+
+.contrib-title {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.contrib-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.contrib-status {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+
+.contrib-status.merged {
+  color: #238636;
+}
+
+.contrib-status.open {
+  color: #9a6700;
+}
+
+.contrib-number {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.contrib-arrow {
+  font-size: 15px;
+  color: var(--text3);
+  transition: transform 0.15s;
+}
+
+.contrib-row:hover .contrib-arrow {
+  transform: translate(2px, -2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .contrib-status.merged {
+    color: #3fb950;
+  }
+
+  .contrib-status.open {
+    color: #d29922;
+  }
+}
+
+@media (max-width: 680px) {
+  .contrib-row {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contrib-meta {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+  }
+
+  .contrib-title {
+    font-size: 15px;
+  }
+}
+
     /* BLOGS */
     .blogs-box {
       border: 0.5px solid var(--border);
@@ -362,6 +468,7 @@
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#contributions">Contributions</a></li>
     <li><a href="#blogs">Blog</a></li>
     <li><a href="mailto:shreyasrajiv327@gmail.com">Contact</a></li>
   </ul>
@@ -522,6 +629,80 @@
     </div>
   </div>
 </div>
+<hr class="divider" />
+
+<hr class="divider" />
+
+<!-- OPEN SOURCE CONTRIBUTIONS -->
+<div class="section section-sm" id="contributions">
+  <p class="label">Open Source</p>
+  <h2 class="section-headline fade">Contributions.</h2>
+
+  <div class="contributions">
+
+    <a
+      class="contrib-row fade"
+      href="https://github.com/cilium/cilium/pull/47929"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="contrib-main">
+        <div class="contrib-repo">Cilium </div>
+        <div class="contrib-title">
+          fix(gateway): fail closed on invalid ExternalAuth
+        </div>
+      </div>
+
+      <div class="contrib-meta">
+        <span class="contrib-status merged">Merged</span>
+        <span class="contrib-number">#47929</span>
+        <span class="contrib-arrow">↗</span>
+      </div>
+    </a>
+
+    <a
+      class="contrib-row fade"
+      href="https://github.com/cilium/cilium/pull/46519"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="contrib-main">
+        <div class="contrib-repo">Cilium </div>
+        <div class="contrib-title">
+          hubble: fix l7 monitor filtering for AccessLog events
+        </div>
+      </div>
+
+      <div class="contrib-meta">
+        <span class="contrib-status merged">Merged</span>
+        <span class="contrib-number">#46519</span>
+        <span class="contrib-arrow">↗</span>
+      </div>
+    </a>
+
+    <a
+      class="contrib-row fade"
+      href="https://github.com/hashicorp/consul/issues/23738"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="contrib-main">
+        <div class="contrib-repo">HashiCorp Consul</div>
+        <div class="contrib-title">
+          Support of post-quantum algorithms
+        </div>
+      </div>
+
+      <div class="contrib-meta">
+        <span class="contrib-status open">Open</span>
+        <span class="contrib-number">#23738</span>
+        <span class="contrib-arrow">↗</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
 <hr class="divider" />
 
 <!-- BLOGS -->
