@@ -175,6 +175,11 @@
       margin-bottom: 24px;
     }
 
+    .contribution-desc code {
+      font-family: var(--mono);
+      font-size: 0.9em;
+    }
+
     .contribution-link {
       font-family: var(--mono);
       font-size: 11px;
@@ -242,7 +247,7 @@
 
   <div class="contributions">
 
-    <!-- CILIUM HUBBLE -->
+    <!-- CILIUM SYSTEM CA -->
 
     <article class="contribution">
 
@@ -250,30 +255,32 @@
 
         <div>
           <div class="contribution-org">
-            Cilium · Hubble
+            Cilium · Gateway API
           </div>
 
           <h2 class="contribution-title">
-            Fix L7 monitor filtering for AccessLog events
+            Enable system CA for BackendTLSPolicy
           </h2>
         </div>
 
         <div class="contribution-meta">
-          PR #46519 · Merged
+          PR #48895 · Open
         </div>
 
       </div>
 
       <p class="contribution-desc">
-        Fixed an issue in Hubble's monitor filtering where AccessLog
-        events were not handled correctly by the existing filtering
-        logic. The change extended event handling to correctly account
-        for AccessLog message types and included corresponding tests
-        to verify the behavior.
+        Implemented TLS origination for BackendTLSPolicy configurations
+        using <code>wellKnownCACertificates: System</code>. The change
+        configures Envoy to use its system root certificates when no
+        CA certificate reference is provided, while preserving the
+        existing ConfigMap/SDS flow for <code>caCertificateRefs</code>.
+        Added regression coverage to verify the generated Envoy TLS
+        configuration and SNI behavior.
       </p>
 
       <a
-        href="https://github.com/cilium/cilium/pull/46519"
+        href="https://github.com/cilium/cilium/pull/48895"
         target="_blank"
         rel="noopener noreferrer"
         class="contribution-link"
@@ -317,6 +324,48 @@
 
       <a
         href="https://github.com/cilium/cilium/pull/47929"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contribution-link"
+      >
+        View pull request ↗
+      </a>
+
+    </article>
+
+
+    <!-- CILIUM HUBBLE -->
+
+    <article class="contribution">
+
+      <div class="contribution-header">
+
+        <div>
+          <div class="contribution-org">
+            Cilium · Hubble
+          </div>
+
+          <h2 class="contribution-title">
+            Fix L7 monitor filtering for AccessLog events
+          </h2>
+        </div>
+
+        <div class="contribution-meta">
+          PR #46519 · Merged
+        </div>
+
+      </div>
+
+      <p class="contribution-desc">
+        Fixed an issue in Hubble's monitor filtering where AccessLog
+        events were not handled correctly by the existing filtering
+        logic. The change extended event handling to correctly account
+        for AccessLog message types and included corresponding tests
+        to verify the behavior.
+      </p>
+
+      <a
+        href="https://github.com/cilium/cilium/pull/46519"
         target="_blank"
         rel="noopener noreferrer"
         class="contribution-link"
